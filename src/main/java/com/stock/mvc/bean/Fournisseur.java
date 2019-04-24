@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Id_Fournisseur")
+@Table(name="Fournisseur")
 public class Fournisseur implements Serializable {
 
 	@Id

@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Id_Client")
+@Table(name="Client")
 public class Client implements Serializable {
 
 	@Id
