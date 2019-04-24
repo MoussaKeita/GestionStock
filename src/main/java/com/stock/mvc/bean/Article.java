@@ -39,8 +39,8 @@ public class Article implements Serializable{
           // private LigneCmdClient ligneCmdClient;
           // @OneToOne(mappedBy="article")
           // private LigneCmdFournisseur ligneCmdFournisseur;
-           @ManyToMany
-           private List<MouvementStock> MouvementStocks;
+           //@ManyToMany
+          private List<MouvementStock> MouvementStocks;
            
           public Article() {
         	  

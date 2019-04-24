@@ -25,7 +25,7 @@ public class MouvementStock implements Serializable{
     private BigDecimal quantite;
     private int seuilMinimal;
     private int typeMvt;
-    @ManyToMany
+    //@ManyToMany
     private List<Article> articles;
     @ManyToOne
     private Fournisseur fournisseur;
