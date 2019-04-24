@@ -26,6 +26,7 @@ public class Article implements Serializable{
            private BigDecimal prixUnitaireTTC;
            private BigDecimal tauxTVA;
            private String photo;
+           private String merde;
            @ManyToOne
            private Category category;
            @ManyToOne
