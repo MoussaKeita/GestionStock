@@ -17,6 +17,8 @@ public class BonCommande implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date dateBonCommande;
+    private String bob;
+    
 	public Long getId() {
 		return id;
 	}
@@ -28,6 +30,12 @@ public class BonCommande implements Serializable {
 	}
 	public void setDateBonCommande(Date dateBonCommande) {
 		this.dateBonCommande = dateBonCommande;
+	}
+	public String getBob() {
+		return bob;
+	}
+	public void setBob(String bob) {
+		this.bob = bob;
 	}
     
     
