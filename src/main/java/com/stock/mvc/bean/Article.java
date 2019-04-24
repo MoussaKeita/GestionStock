@@ -2,11 +2,16 @@ package com.stock.mvc.bean;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,8 +27,20 @@ public class Article implements Serializable{
            private BigDecimal prixUnitaireTTC;
            private BigDecimal tauxTVA;
            private String photo;
-           private String image;
-           private String images;
+           @ManyToOne
+           private Category category;
+           @ManyToOne
+           private BonLivraison bonLivraison;
+           @ManyToOne
+           private BonCommande bonCommande;
+           @OneToOne(mappedBy="article")
+           private LigneVente ligneVente;
+           @OneToOne(mappedBy="article")
+           private LigneCmdClient ligneCmdClient;
+           @OneToOne(mappedBy="article")
+           private LigneCmdFournisseur ligneCmdFournisseur;
+           @ManyToMany
+           private List<MouvementStock> MouvementStocks;
            
           public Article() {
         	  
@@ -86,22 +103,61 @@ public class Article implements Serializable{
 			this.photo = photo;
 		}
 
-		public String getImage() {
-			return image;
+		public Category getCategory() {
+			return category;
 		}
 
-		public void setImage(String image) {
-			this.image = image;
+		public void setCategory(Category category) {
+			this.category = category;
 		}
 
-		public String getImages() {
-			return images;
+		public BonLivraison getBonLivraison() {
+			return bonLivraison;
 		}
 
-		public void setImages(String images) {
-			this.images = images;
+		public void setBonLivraison(BonLivraison bonLivraison) {
+			this.bonLivraison = bonLivraison;
 		}
-          
+
+		public BonCommande getBonCommande() {
+			return bonCommande;
+		}
+
+		public void setBonCommande(BonCommande bonCommande) {
+			this.bonCommande = bonCommande;
+		}
+
+		public LigneVente getLigneVente() {
+			return ligneVente;
+		}
+
+		public void setLigneVente(LigneVente ligneVente) {
+			this.ligneVente = ligneVente;
+		}
+
+		public LigneCmdClient getLigneCmdClient() {
+			return ligneCmdClient;
+		}
+
+		public void setLigneCmdClient(LigneCmdClient ligneCmdClient) {
+			this.ligneCmdClient = ligneCmdClient;
+		}
+
+		public LigneCmdFournisseur getLigneCmdFournisseur() {
+			return ligneCmdFournisseur;
+		}
+
+		public void setLigneCmdFournisseur(LigneCmdFournisseur ligneCmdFournisseur) {
+			this.ligneCmdFournisseur = ligneCmdFournisseur;
+		}
+
+		public List<MouvementStock> getMouvementStocks() {
+			return MouvementStocks;
+		}
+
+		public void setMouvementStocks(List<MouvementStock> mouvementStocks) {
+			MouvementStocks = mouvementStocks;
+		}
           
            
 }

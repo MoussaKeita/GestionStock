@@ -1,11 +1,14 @@
 package com.stock.mvc.bean;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +21,11 @@ public class Facture implements Serializable {
 	private Date dateFacturation;
 	private double total;
 	private Date datePaiement;
+	@OneToMany(mappedBy = "facture")
+    private List<BonCommande> bonCommandes;
+	@ManyToOne
+    private Administrateur administrateur;
+	
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +49,18 @@ public class Facture implements Serializable {
 	}
 	public void setDatePaiement(Date datePaiement) {
 		this.datePaiement = datePaiement;
+	}
+	public List<BonCommande> getBonCommandes() {
+		return bonCommandes;
+	}
+	public void setBonCommandes(List<BonCommande> bonCommandes) {
+		this.bonCommandes = bonCommandes;
+	}
+	public Administrateur getAdministrateur() {
+		return administrateur;
+	}
+	public void setAdministrateur(Administrateur administrateur) {
+		this.administrateur = administrateur;
 	}
 	
 	

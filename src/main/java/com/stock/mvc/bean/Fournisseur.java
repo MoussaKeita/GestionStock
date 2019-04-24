@@ -6,12 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Id_Client")
-public class Client implements Serializable {
+@Table(name="Id_Fournisseur")
+public class Fournisseur implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,9 +23,8 @@ public class Client implements Serializable {
 	private String email;
 	private String password;
 	private String photo;
-    @OneToMany(mappedBy = "client")
-	private List<BonCommande> bonCommandes;
-    
+	@OneToMany(mappedBy="fournisseur")
+    private List<MouvementStock> mouvementStocks;
 	public Long getId() {
 		return id;
 	}
@@ -67,12 +67,12 @@ public class Client implements Serializable {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public List<BonCommande> getBonCommandes() {
-		return bonCommandes;
+	public List<MouvementStock> getMouvementStocks() {
+		return mouvementStocks;
 	}
-	public void setBonCommandes(List<BonCommande> bonCommandes) {
-		this.bonCommandes = bonCommandes;
+	public void setMouvementStocks(List<MouvementStock> mouvementStocks) {
+		this.mouvementStocks = mouvementStocks;
 	}
-    
-    
+	
+	
 }

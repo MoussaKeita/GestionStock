@@ -6,12 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Id_Client")
-public class Client implements Serializable {
+@Table(name="Id_Administrateur")
+public class Administrateur implements Serializable {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,9 +23,13 @@ public class Client implements Serializable {
 	private String email;
 	private String password;
 	private String photo;
-    @OneToMany(mappedBy = "client")
-	private List<BonCommande> bonCommandes;
-    
+	@OneToMany(mappedBy="administrateur")
+	private List<Vente> ventes;
+	@OneToMany(mappedBy="administrateur")
+    private List<Facture> factures; 
+	@OneToMany(mappedBy="administrateur")
+    private List<LigneCmdClient> ligneCmdClients; 
+
 	public Long getId() {
 		return id;
 	}
@@ -67,12 +72,26 @@ public class Client implements Serializable {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	public List<BonCommande> getBonCommandes() {
-		return bonCommandes;
+	public List<Vente> getVentes() {
+		return ventes;
 	}
-	public void setBonCommandes(List<BonCommande> bonCommandes) {
-		this.bonCommandes = bonCommandes;
+	public void setVentes(List<Vente> ventes) {
+		this.ventes = ventes;
 	}
-    
-    
+	public List<Facture> getFactures() {
+		return factures;
+	}
+	public void setFactures(List<Facture> factures) {
+		this.factures = factures;
+	}
+	public List<LigneCmdClient> getLigneCmdClients() {
+		return ligneCmdClients;
+	}
+	public void setLigneCmdClients(List<LigneCmdClient> ligneCmdClients) {
+		this.ligneCmdClients = ligneCmdClients;
+	}
+	
+	
+	
 }
+

@@ -3,11 +3,15 @@ package com.stock.mvc.bean;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name = "mouvementStock")
@@ -22,7 +26,11 @@ public class MouvementStock implements Serializable{
     private BigDecimal quantite;
     private int seuilMinimal;
     private int typeMvt;
-    
+    @ManyToMany
+    private List<Article> articles;
+    @ManyToOne
+    private Fournisseur fournisseur;
+   
     public MouvementStock() {
     	
     }
@@ -66,5 +74,22 @@ public class MouvementStock implements Serializable{
 	public void setTypeMvt(int typeMvt) {
 		this.typeMvt = typeMvt;
 	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
+	}
+
     
 }

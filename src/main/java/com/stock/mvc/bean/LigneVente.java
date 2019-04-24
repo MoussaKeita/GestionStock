@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +17,10 @@ public class LigneVente implements Serializable{
     @GeneratedValue
     @Column(name="id_vente")
     private Long id;
+    @OneToOne(mappedBy="ligneVente")
+    private Article article;
+    @ManyToOne
+    private Vente vente;
     
     public LigneVente() {
     	
@@ -27,5 +33,23 @@ public class LigneVente implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public Vente getVente() {
+		return vente;
+	}
+
+	public void setVente(Vente vente) {
+		this.vente = vente;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+	
+	
     
 }

@@ -1,11 +1,13 @@
 package com.stock.mvc.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,16 @@ public class Category implements Serializable {
     @Column(name="id_Category")
     
     private Long idCategory;
+    @OneToMany(mappedBy = "category")
+    private List<Article> articles;
+    private String codeArticle;
+    private String libelle;
+
+     public Category() {
+	
+      }
+     
+     
     public Long getIdCategory() {
 		return idCategory;
 	}
@@ -40,11 +52,16 @@ public class Category implements Serializable {
 		this.libelle = libelle;
 	}
 
-	private String codeArticle;
-    private String libelle;
 
-     public Category() {
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+
 	
-      }
-     
+	
 }

@@ -2,11 +2,13 @@ package com.stock.mvc.bean;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +20,8 @@ public class BonLivraison implements Serializable{
     private Long id;
     private String code;
     private Date dateLivraison;
+    @OneToMany(mappedBy = "bonCommande")
+    private List<Article> articles;
     
     public BonLivraison() {
     	
@@ -46,6 +50,16 @@ public class BonLivraison implements Serializable{
 	public void setDateLivraison(Date dateLivraison) {
 		this.dateLivraison = dateLivraison;
 	}
+
+	public List<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(List<Article> articles) {
+		this.articles = articles;
+	}
+	
+	
 
 
 }
