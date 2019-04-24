@@ -14,8 +14,8 @@ public class LigneCmdFournisseur implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	@OneToOne(mappedBy="ligneCmdFournisseur")
-    private Article article;
+	//@OneToOne(mappedBy="ligneCmdFournisseur")
+    //private Article article;
     
 
 	public Long getId() {

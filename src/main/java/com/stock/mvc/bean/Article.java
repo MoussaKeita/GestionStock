@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -33,12 +32,12 @@ public class Article implements Serializable{
            private BonLivraison bonLivraison;
            @ManyToOne
            private BonCommande bonCommande;
-           @OneToOne(mappedBy="article")
-           private LigneVente ligneVente;
-           @OneToOne(mappedBy="article")
-           private LigneCmdClient ligneCmdClient;
-           @OneToOne(mappedBy="article")
-           private LigneCmdFournisseur ligneCmdFournisseur;
+           //@OneToOne(mappedBy="article")
+          // private LigneVente ligneVente;
+           //@OneToOne(mappedBy="article")
+          // private LigneCmdClient ligneCmdClient;
+          // @OneToOne(mappedBy="article")
+          // private LigneCmdFournisseur ligneCmdFournisseur;
            @ManyToMany
            private List<MouvementStock> MouvementStocks;
            
@@ -127,29 +126,7 @@ public class Article implements Serializable{
 			this.bonCommande = bonCommande;
 		}
 
-		public LigneVente getLigneVente() {
-			return ligneVente;
-		}
-
-		public void setLigneVente(LigneVente ligneVente) {
-			this.ligneVente = ligneVente;
-		}
-
-		public LigneCmdClient getLigneCmdClient() {
-			return ligneCmdClient;
-		}
-
-		public void setLigneCmdClient(LigneCmdClient ligneCmdClient) {
-			this.ligneCmdClient = ligneCmdClient;
-		}
-
-		public LigneCmdFournisseur getLigneCmdFournisseur() {
-			return ligneCmdFournisseur;
-		}
-
-		public void setLigneCmdFournisseur(LigneCmdFournisseur ligneCmdFournisseur) {
-			this.ligneCmdFournisseur = ligneCmdFournisseur;
-		}
+		
 
 		public List<MouvementStock> getMouvementStocks() {
 			return MouvementStocks;

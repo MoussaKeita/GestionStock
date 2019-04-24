@@ -15,8 +15,8 @@ public class LigneCmdClient implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-	@OneToOne(mappedBy="ligneCmdClient")
-    private Article article;
+	//@OneToOne(mappedBy="ligneCmdClient")
+   // private Article article;
 	@ManyToOne
     private Administrateur administrateur;
     
@@ -27,14 +27,6 @@ public class LigneCmdClient implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Article getArticle() {
-		return article;
-	}
-
-	public void setArticle(Article article) {
-		this.article = article;
 	}
 
 	public Administrateur getAdministrateur() {
