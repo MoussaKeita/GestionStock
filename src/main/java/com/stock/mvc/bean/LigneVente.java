@@ -17,8 +17,8 @@ public class LigneVente implements Serializable{
     @GeneratedValue
     @Column(name="id_vente")
     private Long id;
-    //@OneToOne(mappedBy="ligneVente")
-   //private Article article;
+    @OneToOne
+    private Article article;
     @ManyToOne
     private Vente vente;
     
@@ -42,7 +42,13 @@ public class LigneVente implements Serializable{
 		this.vente = vente;
 	}
 
-	
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
 	
     
 }

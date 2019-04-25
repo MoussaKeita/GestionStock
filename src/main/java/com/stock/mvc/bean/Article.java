@@ -33,18 +33,27 @@ public class Article implements Serializable{
            private BonLivraison bonLivraison;
            @ManyToOne
            private BonCommande bonCommande;
-           //@OneToOne(mappedBy="article")
-          // private LigneVente ligneVente;
-           //@OneToOne(mappedBy="article")
-          // private LigneCmdClient ligneCmdClient;
-          // @OneToOne(mappedBy="article")
-          // private LigneCmdFournisseur ligneCmdFournisseur;
-           //@ManyToMany
+           @OneToOne
+           private LigneVente ligneVente;
+           @OneToOne
+           private LigneCmdClient ligneCmdClient;
+           @OneToOne
+           private LigneCmdFournisseur ligneCmdFournisseur;
+           @ManyToMany
           private List<MouvementStock> MouvementStocks;
            
           public Article() {
         	  
           }
+
+		public String getMerde() {
+			return merde;
+		}
+
+		public void setMerde(String merde) {
+			this.merde = merde;
+		}
+
 
 		public Long getIdArticle() {
 			return idArticle;
@@ -127,7 +136,29 @@ public class Article implements Serializable{
 			this.bonCommande = bonCommande;
 		}
 
-		
+		public LigneCmdClient getLigneCmdClient() {
+			return ligneCmdClient;
+		}
+
+		public void setLigneCmdClient(LigneCmdClient ligneCmdClient) {
+			this.ligneCmdClient = ligneCmdClient;
+		}
+
+		public LigneVente getLigneVente() {
+			return ligneVente;
+		}
+
+		public void setLigneVente(LigneVente ligneVente) {
+			this.ligneVente = ligneVente;
+		}
+
+		public LigneCmdFournisseur getLigneCmdFournisseur() {
+			return ligneCmdFournisseur;
+		}
+
+		public void setLigneCmdFournisseur(LigneCmdFournisseur ligneCmdFournisseur) {
+			this.ligneCmdFournisseur = ligneCmdFournisseur;
+		}
 
 		public List<MouvementStock> getMouvementStocks() {
 			return MouvementStocks;
@@ -136,6 +167,6 @@ public class Article implements Serializable{
 		public void setMouvementStocks(List<MouvementStock> mouvementStocks) {
 			MouvementStocks = mouvementStocks;
 		}
-          
+		         
            
 }
