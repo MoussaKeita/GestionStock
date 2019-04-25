@@ -13,5 +13,5 @@ public interface ArticleService{
 	public void remove(Long id);
 	public Article findOne(String paramName, Object paramValue);
 	public Article findOne(String[] paramName, Object[] paramValue);
-	public int findCountBy(String paramName, Object paramValue);
+	public int findCountBy(String paramNames, Object paramValues);
 }

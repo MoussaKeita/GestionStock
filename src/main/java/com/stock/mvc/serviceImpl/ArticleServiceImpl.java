@@ -2,10 +2,13 @@ package com.stock.mvc.serviceImpl;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.stock.mvc.bean.Article;
 import com.stock.mvc.dao.ArticleDao;
 import com.stock.mvc.service.ArticleService;
 
+@Transactional
 public class ArticleServiceImpl implements ArticleService {
 	private ArticleDao dao ;
 	// getter and setter pour pouvoir faire l'injection de dependance//
@@ -36,38 +39,32 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public List<Article> selectAll(String sortField, String sort) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.selectAll(sortField, sort);
 	}
 
 	@Override
 	public Article getbyId(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getbyId(id);
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
-		
+		dao.remove(id);
 	}
 
 	@Override
 	public Article findOne(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.findOne(paramName, paramValue);
 	}
 
 	@Override
-	public Article findOne(String[] paramName, Object[] paramValue) {
-		// TODO Auto-generated method stub
-		return null;
+	public Article findOne(String[] paramNames, Object[] paramValues) {
+		return dao.findOne(paramNames, paramValues);
 	}
 
 	@Override
 	public int findCountBy(String paramName, Object paramValue) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.findCountBy(paramName, paramValue);
 	}
 
 }
