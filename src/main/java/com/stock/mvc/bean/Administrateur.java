@@ -22,12 +22,12 @@ public class Administrateur implements Serializable {
 	private String email;
 	private String password;
 	private String photo;
-	//@OneToMany(mappedBy="administrateur")
-	//private List<Vente> ventes;
-	//@OneToMany(mappedBy="administrateur")
-    //private List<Facture> factures; 
-	//@OneToMany(mappedBy="administrateur")
-    //private List<LigneCmdClient> ligneCmdClients; 
+	@OneToMany(mappedBy="administrateur")
+	private List<Vente> ventes;
+	@OneToMany(mappedBy="administrateur")
+    private List<Facture> factures; 
+	@OneToMany(mappedBy="administrateur")
+    private List<LigneCmdClient> ligneCmdClients; 
 
 	public Long getId() {
 		return id;
@@ -71,6 +71,26 @@ public class Administrateur implements Serializable {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
+	public List<Vente> getVentes() {
+		return ventes;
+	}
+	public void setVentes(List<Vente> ventes) {
+		this.ventes = ventes;
+	}
+	public List<Facture> getFactures() {
+		return factures;
+	}
+	public void setFactures(List<Facture> factures) {
+		this.factures = factures;
+	}
+	public List<LigneCmdClient> getLigneCmdClients() {
+		return ligneCmdClients;
+	}
+	public void setLigneCmdClients(List<LigneCmdClient> ligneCmdClients) {
+		this.ligneCmdClients = ligneCmdClients;
+	}
+	
+	
 	
 	
 }

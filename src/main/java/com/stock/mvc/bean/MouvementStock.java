@@ -89,6 +89,8 @@ public class MouvementStock implements Serializable{
 	public void setFournisseur(Fournisseur fournisseur) {
 		this.fournisseur = fournisseur;
 	}
+	
+	
 
     
 }
