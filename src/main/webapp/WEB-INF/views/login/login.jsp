@@ -10,11 +10,9 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-<<<<<<< HEAD
     <!-- Bootstrap Core CSS -->
     
-=======
+
        <!-- Bootstrap Core CSS -->
   <link href="<%=request.getContextPath() %>/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,7 +25,6 @@
     <!-- Custom Fonts -->
     <link href="<%=request.getContextPath() %>/resources/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
->>>>>>> branch 'master' of https://github.com/MoussaKeita/GestionStock.git
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
