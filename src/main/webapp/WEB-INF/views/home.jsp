@@ -1,7 +1,11 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 
 
+=======
+<%@ include file="/WEB-INF/views/includes/includes.jsp" %>
+ branch 'master' of https://github.com/MoussaKeita/GestionStock.git
 <html>
 
 <head>
