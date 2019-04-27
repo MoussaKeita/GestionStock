@@ -26,7 +26,7 @@ public class Article implements Serializable{
            private BigDecimal prixUnitaireTTC;
            private BigDecimal tauxTVA;
            private String photo;
-           private String merde;
+           
            @ManyToOne
            private Category category;
            @ManyToOne
@@ -45,14 +45,6 @@ public class Article implements Serializable{
           public Article() {
         	  
           }
-
-		public String getMerde() {
-			return merde;
-		}
-
-		public void setMerde(String merde) {
-			this.merde = merde;
-		}
 
 
 		public Long getIdArticle() {
