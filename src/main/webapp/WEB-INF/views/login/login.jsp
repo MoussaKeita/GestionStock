@@ -1,7 +1,5 @@
-<<<<<<< HEAD
+
 <%@ include file="/WEB-INF/views/includes/includes.jsp" %>
-=======
->>>>>>> branch 'master' of https://github.com/MoussaKeita/GestionStock.git
 <!DOCTYPE html>
 <html lang="en">
 
