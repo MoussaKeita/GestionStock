@@ -12,5 +12,11 @@
         <bean id="clientService" class="com.stock.mvc.serviceImpl.ClientServiceImpl">
         <property name="dao" ref="clientDao"></property>
         </bean>
+        
+        <bean id="flickrDao" class="com.stock.mvc.dao.impl.FlikrDaoImpl"/>
+        <bean id="flickrService" class="com.stock.mvc.serviceImpl.FlickrServiceImpl">
+        <property name="dao" ref="flickrDao"></property>
+        </bean>
+        
     </beans>
     
