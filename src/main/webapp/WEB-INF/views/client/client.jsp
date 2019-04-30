@@ -64,7 +64,7 @@
                 <div class="row">
                      <div class="col-lg-12">
 						  <ol class="breadcrumb">
-						    <li><a href="#"><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
+						    <li><a href="<c:url value="/client/nouveau"/>" "><i class="fa fa-plus">&nbsp;<fmt:message key="common.ajouter"/></i></a></li>
 						    <li><a href="#"><i class="fa fa-download">&nbsp;<fmt:message key="common.exporter"/></i></a></li>
 						    <li><a href="#"><i class="fa fa-upload">&nbsp;<fmt:message key="common.importer"/></i></a></li>
 
@@ -101,7 +101,8 @@
                                             <td>${client.getAdresse() }</td>
                                             <td>${client.getEmail() }</td>
                                             <td>
-                                                  <a href="#"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
+                                                <c:url value="/client/modifier/${client.getId() }" var="urlMofier"/>
+                                                  <a href="${urlMofier }"><i class="fa fa-edit">&nbsp;<fmt:message key="common.modifier"/></i></a>
                                                         &nbsp;|&nbsp;
                                                   <a href="#"><i class="fa fa-trash-o">&nbsp;<fmt:message key="common.supprimer"/></i></a>
                                                        
